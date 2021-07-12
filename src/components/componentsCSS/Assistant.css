@@ -1,14 +1,14 @@
 .assistant{
-    position: fixed;
     width: 400px;
     height: 200px;
     background-color: red;
 
+    position: absolute;
 
 }
 
 .assistant-container{
-    position: relative;
+    /*position: relative;*/
     background-color: blue;
 
     transform-origin: center;
