@@ -1,0 +1,17 @@
+.assistant{
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    background-color: red;
+
+
+}
+
+.assistant-container{
+    position: relative;
+    background-color: blue;
+
+    transform-origin: center;
+    top: 25%;
+    height: 50%;
+}
