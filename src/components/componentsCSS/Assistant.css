@@ -3,15 +3,45 @@
     height: 200px;
     background-color: red;
 
-    position: absolute;
+
+    position: relative;
+
+    display: flex;
+
 
 }
 
-.assistant-container{
-    /*position: relative;*/
-    background-color: blue;
 
-    transform-origin: center;
-    top: 25%;
-    height: 50%;
+.assistant-info{
+    background-color: #61dafb;
+
+
+
+    width: 50%;
+
+}
+.assistant-container-draggable {
+    cursor: auto;
+    background-color: blue;
+    --drag-size: 100px;
+    height: var(--drag-size);
+    width: var(--drag-size);
+}
+
+.assistant-core{
+    background-color: yellow;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand-button{
+    position: absolute;
+    top: 5px;
+}
+
+.hide{
+    display: none;
 }
