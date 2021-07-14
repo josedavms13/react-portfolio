@@ -12,7 +12,7 @@ const Assistant = ({props}) => {
 
 
     let mousePosition = [0, 0];
-    let offset = 90;
+    let offset = 85;
     function mousePositionWhenClickFunction(e) {
         if (clicked) {
             mousePosition[0] = e.clientY- offset;

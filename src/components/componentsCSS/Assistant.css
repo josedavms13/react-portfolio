@@ -1,13 +1,12 @@
 .assistant{
     width: 400px;
     height: 200px;
-    background-color: red;
-
 
     position: relative;
 
     display: flex;
 
+    z-index: 500000;
 
 }
 
