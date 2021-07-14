@@ -1,5 +1,5 @@
-.landing{
-  background-color: red;
-  width: 500px;
-  height: 500px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;1,400&display=swap');
+
+*{
+  font-family: 'Nunito', sans-serif;
 }

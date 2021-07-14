@@ -1,0 +1,40 @@
+.landing{
+
+    background-color: #081c2d;
+    color: white;
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 90000000;
+}
+
+.landing h5{
+    font-size: 2rem;
+}
+.landing h6{
+    font-size: 1.5rem;
+}
+
+.lang-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lang-buttons button{
+    padding: 5px;
+    font-size: 1rem;
+    width: 15vw;
+
+
+}

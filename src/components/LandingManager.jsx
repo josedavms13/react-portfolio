@@ -1,11 +1,16 @@
+import './views/viewsCSS/landingManager.css'
+
 import React, {useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom'
 import {useDispatch} from "react-redux";
 
+
+
+
 const LandingManager = ({props}) => {
 
     const history = useHistory();
-
+    const dispatch = useDispatch();
     let {language} = useParams();
 
     //Language
@@ -16,6 +21,8 @@ const LandingManager = ({props}) => {
         questionMessage: '¿Deseas mantenerte en español?',
         buttonsLabels: ['si', 'Change to english'],
     });
+
+
 
     useEffect(() => {
         console.log(landingLanguage);
@@ -54,7 +61,7 @@ const LandingManager = ({props}) => {
             {landingLanguage && <h5>{landingMessage.labelMessage}</h5>}
             {landingLanguage && <h6>{landingMessage.questionMessage}</h6>}
             {landingLanguage && <div className="lang-buttons">
-                <button>{landingMessage.buttonsLabels[0]}</button>
+                <button onClick={()=>dispatch()}>{landingMessage.buttonsLabels[0]}</button>
                 <button>{landingMessage.buttonsLabels[1]}</button>
             </div>}
         </div>
