@@ -1,10 +1,13 @@
-import './views/viewsCSS/landingManager.css'
+import './viewsCSS/landingManager.css'
 
 import React, {useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
 
 import {setLangEnglish, setLangSpanish} from "../redux/actions/languageActions";
+import {speech} from '../redux/actions/assistantActions'
+
+import {landingDialogs} from "../AssisstantAssets/dialogs/landingPage";
 
 const LandingManager = ({}) => {
 
@@ -12,14 +15,6 @@ const LandingManager = ({}) => {
     const dispatch = useDispatch();
     let {language} = useParams();
 
-
-    //region store
-    const storeLanguage = useSelector(state => state);
-
-    useEffect(() => {
-        console.log(storeLanguage);
-    }, [storeLanguage]);
-    //endregion
 
 
 
@@ -50,6 +45,8 @@ const LandingManager = ({}) => {
                     console.log('changing to spanish')
                     dispatch(setLangSpanish)
                 }
+
+                history.push('/register');
                 break
             case 'es':
                 //if we are in english and want to keep it
@@ -63,6 +60,8 @@ const LandingManager = ({}) => {
                     dispatch(setLangEnglish);
 
                 }
+                history.push('/register');
+                break
         }
     }
 
@@ -100,6 +99,15 @@ const LandingManager = ({}) => {
         }
     }, [landingLanguage])
 
+
+    function speechTest(){
+        const text = landingDialogs.es;
+
+        text.map((text)=>{
+
+            dispatch(speech(text))
+        })
+    }
     return (
 
         <div className={'landing'}>
@@ -110,6 +118,7 @@ const LandingManager = ({}) => {
                 <button onClick={() => languageSelection(0)}>{landingMessage.buttonsLabels[0]}</button>
                 <button onClick={() => languageSelection(1)}>{landingMessage.buttonsLabels[1]}</button>
             </div>}
+            <button onClick={speechTest}>Speech</button>
         </div>
     );
 }

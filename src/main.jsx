@@ -8,9 +8,9 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from "react-redux";
 import rootReducer from "./redux/reducers/rootReducer";
-// import reduxThunk from 'redux-thunk'
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer, composeWithDevTools())
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <React.StrictMode>

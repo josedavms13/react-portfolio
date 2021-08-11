@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import './App.css'
 import {HashRouter as Router, Route, Redirect, Switch, useParams} from "react-router-dom";
-import Assistant from "./components/Assistant";
-import Welcome from "./components/views/Welcome";
+import Assistant from "./views/components/Assistant";
+import Welcome from "./views/Welcome";
 import {useSelector} from "react-redux";
-import LandingManager from "./components/LandingManager";
+import LandingManager from "./views/LandingManager";
+import UserRegister from "./views/UserRegister";
 
 
 function App() {
@@ -23,6 +24,12 @@ function App() {
                     <Route exact path={'/landing/:language'}>
                         <LandingManager />
                     </Route>
+
+                    <Route path={'/register'}>
+                        <UserRegister />
+                    </Route>
+
+
 
                 </Switch>
             </Router>
