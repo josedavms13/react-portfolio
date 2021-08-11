@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {setLangEnglish, setLangSpanish} from "../redux/actions/languageActions";
 
-const LandingManager = ({props}) => {
+const LandingManager = ({}) => {
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -41,29 +41,26 @@ const LandingManager = ({props}) => {
         console.log(landingLanguage)
 
         switch (landingLanguage) {
-            case 'english':
-                console.log('english')
+            case 'en':
                 //if we are in english and want to keep it
                 if (buttonNumber === 0) {
                     console.log('staying in english')
-                    // dispatch(changeLanguage);
+                    dispatch(setLangEnglish);
                 } else {
                     console.log('changing to spanish')
-
-                    // dispatch(changeLanguage)
+                    dispatch(setLangSpanish)
                 }
                 break
-            case 'spanish':
+            case 'es':
                 //if we are in english and want to keep it
-                console.log('spanish')
                 if (buttonNumber === 0) {
-                    // dispatch('@turnToSpanish')
                     console.log('staying in spanish')
+                    dispatch(setLangSpanish)
 
 
                 } else {
-                    // dispatch('@turnToEnglish');
                     console.log('changing to english')
+                    dispatch(setLangEnglish);
 
                 }
         }
