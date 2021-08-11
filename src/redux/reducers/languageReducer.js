@@ -1,14 +1,15 @@
-const INITIAL_STATE = 'spanish';
+import {SET_LANG_ENGLISH, SET_LANG_SPANISH} from '../actions/types'
 
+const INITIAL_STATE = 'english';
 
 const languageReducer = (state=INITIAL_STATE, action)=>{
 
     switch (action.type){
 
-        case '@turnToSpanish':
+        case SET_LANG_SPANISH:
             return 'spanish'
 
-        case '@turnToEnglish':
+        case SET_LANG_ENGLISH:
             return 'english'
 
         default:
